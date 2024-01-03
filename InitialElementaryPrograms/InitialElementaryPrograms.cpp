@@ -39,7 +39,8 @@ int main()
 		cin >> age;
 		cout << "Hello, " << first_name << " (age * months = " << age * 12 << ")\n";
 	}
-
+	cout << "First \n";
+	else
 	if (SECOND)
 	{
 		cout << "Enter floating piont number \n";
