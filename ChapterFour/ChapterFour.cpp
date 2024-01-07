@@ -4,7 +4,7 @@
 #include<algorithm>
 #include<cmath>
 
-#define FIRST		0		// currency calculator
+#define FIRST		1		// currency calculator
 #define SECOND		0		// Simple Switch-Case, inches to cm and cm to inches
 #define THIRD		0		// errors in switch
 #define FOURTH		0		// errors: few labels (cases) for the same case
@@ -14,7 +14,7 @@
 #define EIGHTH		0		// 'square' with adding only - function declaration
 #define NINTH		0		// firs vector - average and median of temperatures
 #define TENTH		0		// vector with words as a form of dictionary - sorted words
-#define ELEVENTH	1		// program to change input words (unwanted) to other words
+#define ELEVENTH	0		// program to change input words (unwanted) to other words
 using namespace std;
 
 int square_sum(int x);
@@ -55,80 +55,80 @@ int main()
 			cin >> value;
 		}
 	}
-
+	
 	if (SECOND)
-	{
-		const double cm_per_inch = 2.54;
-		double lenght = 1;
-		char unit = 'a'; // it can not be strin, only char or int are fine
-		//cm_per_inch = 1; // it causes error, cant be modified
-		string next;
-
-		do 
 		{
-			cout << "What is the lenght and unit? (c or i): \n";
-			cin >> lenght >> unit;
-			switch (unit)
+			const double cm_per_inch = 2.54;
+			double lenght = 1;
+			char unit = 'a'; // it can not be strin, only char or int are fine
+			//cm_per_inch = 1; // it causes error, cant be modified
+			string next;
+
+			do
 			{
-			case 'i': // it has to be a specific vale, it can not be a variable
-				cout << lenght << "cal == " << cm_per_inch * lenght << " cm\n";
-				break; // after each case there has to be a break, compiler does not remind about that
-			case 'c':// same value can not be used for two labels 'case', ther cant be case 'i' and case 'i' again
-				cout << lenght << "cm == " << lenght / cm_per_inch << " cal\n";
-				break;
-			default:
-				cout << "Wrong value";
-				break;
-			}
-			cout << "Do you want to make another conversion of units? \n 'yes', 'no'\n";
-			cin >> next;
-		} while (next != "no");
-	}
+				cout << "What is the lenght and unit? (c or i): \n";
+				cin >> lenght >> unit;
+				switch (unit)
+				{
+				case 'i': // it has to be a specific vale, it can not be a variable
+					cout << lenght << "cal == " << cm_per_inch * lenght << " cm\n";
+					break; // after each case there has to be a break, compiler does not remind about that
+				case 'c':// same value can not be used for two labels 'case', ther cant be case 'i' and case 'i' again
+					cout << lenght << "cm == " << lenght / cm_per_inch << " cal\n";
+					break;
+				default:
+					cout << "Wrong value";
+					break;
+				}
+				cout << "Do you want to make another conversion of units? \n 'yes', 'no'\n";
+				cin >> next;
+			} while (next != "no");
+		}
 
 	if (THIRD)
-	{
-		int y = 'y';
-		const char n = 'n';
-		const char m = '?';
-		cout << "Do you like fish? \n";
-		char a;
-		cin >> a;
-		switch (a)
-		{
-		case n:
-			cout << "first case, n";
-			break;
-				// case y: // expression must have a constant value, value of variable like 'y' can not be used as a constant
-				//case 'n': // value of this case label had alredy been in switch in line 92
-		}
-	}
-
-	if (FOURTH)
-	{
-		string next = "0";
-		
-		do
-		{
-			cout << "Give a digit\n";
-			char digit = '0';
-			cin >> digit;
-			switch (digit)
 			{
-			case '0': case '2': case '4': case '6': case '8':
-				cout << "Even \n";
-				break;
-			case '1': case '3': case '5': case '7': case '9':
-				cout << "Odd \n";
-				break;
-			default:
-				cout << "Wrong value \n"; //wczytuje pierwszy znak jako cyfrę i nigdy nie wchodzi do default
-				break;
+				int y = 'y';
+				const char n = 'n';
+				const char m = '?';
+				cout << "Do you like fish? \n";
+				char a;
+				cin >> a;
+				switch (a)
+				{
+				case n:
+					cout << "first case, n";
+					break;
+					// case y: // expression must have a constant value, value of variable like 'y' can not be used as a constant
+					//case 'n': // value of this case label had alredy been in switch in line 92
+				}
 			}
-			cout << "Do you want to check again? 'yes', 'no'\n";
-			cin >> next;
-		} while (next != "no");
+	
+	if (FOURTH)
+				{
+					string next = "0";
 
-	}
+					do
+					{
+						cout << "Give a digit\n";
+						char digit = '0';
+						cin >> digit;
+						switch (digit)
+						{
+						case '0': case '2': case '4': case '6': case '8':
+							cout << "Even \n";
+							break;
+						case '1': case '3': case '5': case '7': case '9':
+							cout << "Odd \n";
+							break;
+						default:
+							cout << "Wrong value \n"; //wczytuje pierwszy znak jako cyfrę i nigdy nie wchodzi do default
+							break;
+						}
+						cout << "Do you want to check again? 'yes', 'no'\n";
+						cin >> next;
+					} while (next != "no");
+
+				}
 
 	if (FIFTH)
 	{
